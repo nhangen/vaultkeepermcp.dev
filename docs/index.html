@@ -24,7 +24,11 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-SWDQLSGE4Y', { page_referrer: document.referrer ? new URL(document.referrer).origin : '' });
+  (function () {
+    var ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).origin : ''; } catch (e) {}
+    gtag('config', 'G-SWDQLSGE4Y', { page_referrer: ref });
+  })();
 </script>
 </head>
 <body>
