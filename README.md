@@ -8,6 +8,7 @@ Marketing site for VaultKeeper MCP, deployed via GitHub Pages at
 - `index.html` — Home
 - `docs/` — Docs
 - `logos/` — Logo options (design reference, not linked from nav)
+- `tests/` — Measurement-ID and tracker pin for the analytics wiring
 
 Extracted from a single-file design bundle; assets live in per-page `assets/` directories.
 
@@ -34,5 +35,6 @@ python3 -m http.server 8000
 
 GA4 property `VaultKeeper MCP (vaultkeepermcp.dev)` (account Axelroark,
 property id 565785163), measurement ID `G-SWDQLSGE4Y`. The only
-third-party request is `googletagmanager.com/gtag/js`. The test in
-`tests/analytics.test.mjs` pins the ID on every page and the README.
+third-party request is `googletagmanager.com/gtag/js`. Run the pin with
+`npm test` (or `node --test tests/analytics.test.mjs`); it checks the ID and the
+tracker wiring on every page and the README.

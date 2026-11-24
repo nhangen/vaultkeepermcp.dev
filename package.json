@@ -1,0 +1,7 @@
+{
+  "name": "vaultkeepermcp.dev",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/analytics.test.mjs"
+  }
+}
