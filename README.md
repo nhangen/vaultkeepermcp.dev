@@ -29,3 +29,10 @@ CNAME www    nhangen.github.io
 ```
 python3 -m http.server 8000
 ```
+
+## Analytics
+
+GA4 property `VaultKeeper MCP (vaultkeepermcp.dev)` (account Axelroark,
+property id 565785163), measurement ID `G-SWDQLSGE4Y`. The only
+third-party request is `googletagmanager.com/gtag/js`. The test in
+`tests/analytics.test.mjs` pins the ID on every page and the README.

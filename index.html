@@ -19,6 +19,13 @@
 <meta name="twitter:image" content="https://vaultkeepermcp.dev/assets/og-card.png">
 <link rel="icon" type="image/png" href="/assets/be506396-b5af-4931-a041-de77badc1750.png">
 <meta name="theme-color" content="#110f16">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SWDQLSGE4Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SWDQLSGE4Y', { page_referrer: document.referrer ? new URL(document.referrer).origin : '' });
+</script>
 </head>
 <body>
 <x-dc>
@@ -704,4 +711,31 @@ class Component extends DCLogic {
 </script>
 
 
+<script>
+document.addEventListener('click', trackClick, true);
+document.addEventListener('auxclick', trackClick, true);
+function trackClick(event) {
+  var target = event.target instanceof Element ? event.target.closest('a, button') : null;
+  if (!target || typeof window.gtag !== 'function') return;
+  if (event.type === 'auxclick' && (!(target instanceof HTMLAnchorElement) || event.button !== 1)) return;
+  if (event.type === 'click' && event.button !== 0) return;
+  var destination;
+  if (target instanceof HTMLAnchorElement) {
+    var url = new URL(target.href, window.location.href);
+    if (url.protocol === 'http:' || url.protocol === 'https:') {
+      destination = url.origin === window.location.origin
+        ? url.pathname + url.hash
+        : url.hostname + url.pathname;
+    }
+  }
+  var section = target.closest('section, header, footer');
+  var parameters = {
+    element_type: target instanceof HTMLAnchorElement ? 'link' : 'button',
+    element_label: (target.getAttribute('aria-label') || target.textContent || '').trim().slice(0, 80)
+  };
+  if (section && section.id) parameters.section_id = section.id;
+  if (destination) parameters.destination = destination;
+  window.gtag('event', 'site_click', parameters);
+}
+</script>
 </body></html>
