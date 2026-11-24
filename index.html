@@ -423,7 +423,7 @@ pre{margin:0;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monosp
 <div style="flex: 1.1 1 560px; min-width: 0">
 <span class="kicker">Fully Integrated MCP Plugin</span>
 <h1 id="hero-title" class="display" style="margin: 0; font-size: 38px; line-height: 1.12; text-wrap: balance">Turn Obsidian Into an Automated Knowledge Base</h1>
-<p style="max-width: 44ch; margin: 24px 0 0; color: #a39cb0; font-size: 19px; line-height: 1.55">Automatically capture commits, merges, research notes, and daily chats from AI agent sessions. Agents use your vault as a context library for future sessions.</p>
+<p style="max-width: 44ch; margin: 24px 0 0; color: #a39cb0; font-size: 19px; line-height: 1.55">Capture commits, merges, research notes, and daily chats from AI agent sessions. Agents use your vault as a context library for future sessions.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px">
 <a class="btn btn-primary" href="#install">Install VaultKeeper</a>
 <a class="btn btn-ghost" href="https://github.com/nhangen/obsidian-mcp">View on GitHub <svg width="14" height="14" sc-camel-view-box="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
@@ -470,7 +470,7 @@ pre{margin:0;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monosp
 <div class="wrap" style="display: flex; flex-wrap: wrap; gap: 56px">
 <div style="flex: 1 1 380px; min-width: 0">
 <span class="kicker">Install</span>
-<h2 id="install-title" class="display" style="margin: 0 0 16px; font-size: 42px; line-height: 1.08">Installs in just two commands.</h2>
+<h2 id="install-title" class="display" style="margin: 0 0 16px; font-size: 42px; line-height: 1.08">Installs in two commands.</h2>
 <p style="margin: 0 0 12px; color: #a39cb0; font-size: 17px; max-width: 42ch">Install the plugin in Claude Code or Codex, then connect your Obsidian vault within a session. The plugin handles runtime setup and keeps your existing credentials and host settings intact.</p>
 <p class="mono" style="margin: 0 0 28px; color: #918a9e; font-size: 13px">Node.js 20+ · Python 3.11+ for the client</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -494,7 +494,7 @@ pre{margin:0;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monosp
 <div class="wrap" style="padding-top: 88px; padding-bottom: 88px">
 <span class="kicker">Other harnesses</span>
 <h2 id="harness-title" class="display" style="margin: 0; font-size: 46px; line-height: 1.05">Works in any harness.</h2>
-<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #a39cb0; max-width: 640px">Connect OpenCode, Gemini CLI, or any MCP-compatible client to the same VaultKeeper server. Select your client to see its configuration.</p>
+<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #a39cb0; max-width: 640px">Connect Claude Code, Codex, OpenCode, Gemini CLI, or any MCP-compatible client to the same VaultKeeper server. Select your client to see its configuration.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 44px; align-items: center">
 <div style="flex: 1 1 500px; min-width: 0; display: grid; grid-template-columns: minmax(150px, 200px) minmax(36px, 1fr) minmax(150px, 172px); align-items: center">
 <div role="tablist" aria-label="Harness" style="display: flex; flex-direction: column; gap: 10px">
@@ -576,7 +576,7 @@ pre{margin:0;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monosp
 <div style="flex: 1 1 420px; min-width: 0">
 <span class="kicker">Plugin stop hooks</span>
 <h3 class="display" style="margin: 0 0 12px; font-size: 32px; line-height: 1.15">Sessions save themselves at Stop.</h3>
-<p style="margin: 0; color: #a39cb0; font-size: 17px; max-width: 46ch">The Claude Code plugin uses the <span class="mono" style="font-size: .88em; color: #ebe8f0">Stop</span> hook to check for work worth saving whenever Claude finishes a response. The hook marks each new segment of the transcript so it’s picked up only once, then hands it to a background process that summarizes the work and sends the note to the Keeper. If processing fails, the plugin waits for you to retry.</p>
+<p style="margin: 0; color: #a39cb0; font-size: 17px; max-width: 46ch">The Claude Code plugin uses the <span class="mono" style="font-size: .88em; color: #ebe8f0">Stop</span> hook to check for work worth saving whenever Claude finishes a response. The hook marks each new segment of the transcript so it’s picked up only once, then hands it to a background process that summarizes the work and sends the note to the Keeper. The plugin waits for you to retry if processing fails.</p>
 </div>
 </article>
 
@@ -636,7 +636,7 @@ pre{margin:0;padding:16px;overflow-x:auto;font-family:'JetBrains Mono',ui-monosp
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { copied: false, sel: 'gemini' };
+    this.state = { copied: false, sel: 'claude' };
   }
   copyAll() {
     const text = 'claude plugin install nhangen/obsidian\n/obsidian:setup\n\ncodex plugin marketplace add nhangen/claude-obsidian-plugin\ncodex plugin add obsidian@nhangen-codex-plugins';
