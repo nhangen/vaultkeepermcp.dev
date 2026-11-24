@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>VaultKeeper MCP docs</title>
+<script src="assets/f14d9928-67af-4d9c-8d2a-4197d41bcd7c.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/43fdd95d-9ce9-4bb8-a184-94b6faa54445.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/f935ecea-de56-4113-8591-5052c0eb0417.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/39127054-b9de-46a5-9a9c-2409bb79e003.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/5fdd061c-3da4-4ada-9eee-ed4f680ff0f7.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/c9b74821-fb89-475b-b406-83ffbcadc1f5.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/1072a0b7-059e-4c29-9f67-35a50809f93b.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/0592d2f1-0d92-4311-84c8-f4c9b5d7b3cc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/43fdd95d-9ce9-4bb8-a184-94b6faa54445.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/f935ecea-de56-4113-8591-5052c0eb0417.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/39127054-b9de-46a5-9a9c-2409bb79e003.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/5fdd061c-3da4-4ada-9eee-ed4f680ff0f7.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/c9b74821-fb89-475b-b406-83ffbcadc1f5.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/1072a0b7-059e-4c29-9f67-35a50809f93b.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/0592d2f1-0d92-4311-84c8-f4c9b5d7b3cc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/43fdd95d-9ce9-4bb8-a184-94b6faa54445.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/f935ecea-de56-4113-8591-5052c0eb0417.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/39127054-b9de-46a5-9a9c-2409bb79e003.woff2") format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/5fdd061c-3da4-4ada-9eee-ed4f680ff0f7.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/c9b74821-fb89-475b-b406-83ffbcadc1f5.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/1072a0b7-059e-4c29-9f67-35a50809f93b.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/0592d2f1-0d92-4311-84c8-f4c9b5d7b3cc.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/a19d9e2d-8d8f-46be-9229-9e371e8f56a6.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/86811a33-c958-442e-b432-2fb800f5047b.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/a60d0cbd-18d6-499a-bfdb-2c22cd28d05d.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/ab445679-cd80-4334-8c28-583d2077de3e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/388773dc-4100-49fa-8582-9ef417de1ce9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/729af3e5-8486-411f-bbc3-d44baee3e9d1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/a19d9e2d-8d8f-46be-9229-9e371e8f56a6.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/86811a33-c958-442e-b432-2fb800f5047b.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/a60d0cbd-18d6-499a-bfdb-2c22cd28d05d.woff2") format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/ab445679-cd80-4334-8c28-583d2077de3e.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/388773dc-4100-49fa-8582-9ef417de1ce9.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/729af3e5-8486-411f-bbc3-d44baee3e9d1.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/d8b014cf-ca1f-48be-b392-7cc9c767de33.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fef91c1c-3e12-421e-810a-8b80a8bb12ab.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/d8b014cf-ca1f-48be-b392-7cc9c767de33.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fef91c1c-3e12-421e-810a-8b80a8bb12ab.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/d8b014cf-ca1f-48be-b392-7cc9c767de33.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fef91c1c-3e12-421e-810a-8b80a8bb12ab.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0;background:#0d0b11}
+a{color:#ebe8f0}a:hover{color:#c4b0ff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px;box-sizing:border-box}
+.serif{font-family:'Sora',Inter,system-ui,sans-serif;font-weight:600;letter-spacing:-.025em}
+.chapter{display:flex;align-items:center;gap:10px;font:600 12px Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#b197fc;margin:0 0 16px}.chapter::before{content:"";width:7px;height:7px;border-radius:50%;background:#b197fc;box-shadow:0 0 0 4px rgba(177,151,252,.15)}
+.rn{display:inline-block;width:30px;font:500 12px 'JetBrains Mono',monospace;color:#b197fc}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.88em;color:#ebe8f0;background:#1b1724;border:1px solid #28232f;border-radius:4px;padding:1px 5px}
+.navlink{display:flex;align-items:center;min-height:36px;padding:0 12px;border-left:2px solid #28232f;color:#a39cb0;text-decoration:none;font-size:15px}
+.navlink:hover{color:#ebe8f0;border-left-color:#b197fc}
+.step{display:flex;flex-wrap:wrap;gap:28px;padding:28px 0;border-top:1px solid #28232f}
+.num{flex:none;display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid #6d5aa8;background:#1a1524;box-shadow:0 0 0 5px rgba(177,151,252,.06);font:500 13px 'JetBrains Mono',monospace;color:#c4b0ff}
+.snippet{margin:0;border:1px solid #28232f;border-radius:10px;background:#14111a;overflow:hidden;position:relative}
+.snippet figcaption{padding:8px 14px;border-bottom:1px solid #28232f;background:#0f0d14;font:12px 'JetBrains Mono',monospace;color:#a39cb0}
+pre{margin:0;padding:14px;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;line-height:1.7;color:#ebe8f0}
+.ok{color:#918a9e}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.doc{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px 18px 18px;border:1px solid #28232f;border-radius:10px;background:#15121c;text-decoration:none;color:#ebe8f0;transition:transform .2s,border-color .2s}
+.doc:hover{border-color:rgba(177,151,252,.55);color:#ebe8f0;transform:translateY(-3px)}
+.doc::before{content:"";width:9px;height:9px;border-radius:50%;background:#1a1524;border:1.5px solid #6d5aa8;margin-bottom:6px;transition:background .2s,border-color .2s}.doc:hover::before{background:#b197fc;border-color:#b197fc}
+.doc-title{font:600 18px/1.25 'Sora',Inter,sans-serif;letter-spacing:-.01em}
+.doc-desc{color:#a39cb0;font-size:14px;line-height:1.5}
+.doc-file{margin-top:auto;padding-top:10px;border-top:1px solid #28232f;font:12px 'JetBrains Mono',monospace;color:#918a9e}
+.badge{display:inline-block;margin-left:8px;padding:1px 8px;border:1px solid rgba(232,176,75,.45);border-radius:999px;color:#e8b04b;font:500 11px 'JetBrains Mono',monospace;vertical-align:middle}
+.h2{margin:0 0 6px;font-size:30px;line-height:1.15}
+.blurb{max-width:60ch;margin:0 0 20px;color:#a39cb0}
+.ln{display:block;white-space:pre}
+</style>
+</helmet>
+<div style="background: #0d0b11; color: #ebe8f0; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh">
+
+<header style="position: sticky; top: 0; z-index: 5; background: rgba(13,11,17,.86); border-bottom: 1px solid #28232f">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px">
+<div style="display: flex; align-items: center; gap: 16px; min-width: 0">
+<a href="../" aria-label="VaultKeeper MCP home" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: #ebe8f0">
+<img src="assets/642a62b4-3a8c-427c-9826-d05365a3defa.png" width="32" height="32" alt="" style="display: block; object-fit: contain">
+<span class="serif" style="font-size: 19px">VaultKeeper <span style="color: #b197fc">MCP</span></span>
+</a>
+<span aria-hidden="true" style="color: #393243">/</span>
+<span style="color: #a39cb0; font-size: 15px">Developer docs</span>
+</div>
+<div style="display: flex; align-items: center; gap: 4px">
+<a href="../" style="display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 12px; color: #a39cb0; text-decoration: none; font-size: 15px"><span aria-hidden="true">←</span>Home</a>
+<a href="https://github.com/nhangen/obsidian-mcp" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: #a39cb0; text-decoration: none; font-size: 15px">GitHub</a>
+</div>
+</div>
+</header>
+
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 0 56px; align-items: flex-start">
+<nav aria-label="Docs sections" style="flex: 1 1 200px; max-width: 220px; padding: 48px 0 24px">
+<p style="margin: 0 0 12px; color: #918a9e; font: 600 12px Inter, sans-serif; letter-spacing: .18em; text-transform: uppercase">On this page</p>
+<ul style="display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none">
+<li><a class="navlink" href="#quickstart"><span class="rn">01</span>Quick start</a></li>
+<li><a class="navlink" href="#harnesses"><span class="rn">02</span>Connect a harness</a></li>
+<li><a class="navlink" href="#contract"><span class="rn">03</span>The Keeper contract</a></li>
+<li><a class="navlink" href="#capture"><span class="rn">04</span>Capture and hooks</a></li>
+<li><a class="navlink" href="#deploy"><span class="rn">05</span>Deploy over HTTP</a></li>
+</ul>
+</nav>
+
+<main style="flex: 999 1 560px; min-width: 0; padding: 48px 0 80px">
+<p class="chapter">Documentation</p>
+<h1 class="serif" style="margin: 0; max-width: 18ch; font-size: 60px; line-height: 1.02">Build on VaultKeeper MCP.</h1>
+<p style="max-width: 56ch; margin: 22px 0 0; color: #a39cb0; font-size: 18px">Install the server, connect a harness, and read the write contract. Everything runs on the host that holds your vault.</p>
+
+<section id="quickstart" aria-labelledby="qs-title" style="margin-top: 56px">
+<h2 id="qs-title" class="serif h2" style="margin-bottom: 16px">Quick start</h2>
+
+<article class="step">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 14px">
+<span class="num" aria-hidden="true">01</span>
+<div><h3 style="margin: 0 0 6px; font-size: 18px">Get the code</h3><p style="margin: 0; color: #a39cb0">Clone the repository, install the locked dependencies, and run the test suite. You need Node.js 20 or newer.</p></div>
+</div>
+<figure class="snippet" style="flex: 1.3 1 360px; min-width: 0">
+<figcaption>Terminal</figcaption>
+<pre><span class="ln"><span class="ok"># clone and build</span></span><span class="ln">git clone https://github.com/nhangen/obsidian-mcp.git</span><span class="ln">cd obsidian-mcp</span><span class="ln">npm ci &amp;&amp; npm run build &amp;&amp; npm test</span></pre>
+</figure>
+</article>
+
+<article class="step">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 14px">
+<span class="num" aria-hidden="true">02</span>
+<div><h3 style="margin: 0 0 6px; font-size: 18px">Point it at your vault</h3><p style="margin: 0; color: #a39cb0">The stdio server starts in the read profile. Set <code>MCP_STDIO_PROFILE=write</code> to expose the write tools.</p></div>
+</div>
+<figure class="snippet" style="flex: 1.3 1 360px; min-width: 0">
+<figcaption>Terminal</figcaption>
+<pre><span class="ln"><span class="ok"># read-only</span></span><span class="ln">claude-obsidian-mcp --vault /absolute/path/to/vault</span><span class="ln">&nbsp;</span><span class="ln"><span class="ok"># with guarded writes</span></span><span class="ln">MCP_STDIO_PROFILE=write claude-obsidian-mcp \</span><span class="ln">  --vault /absolute/path/to/vault --daily-path Daily/</span></pre>
+</figure>
+</article>
+
+<article class="step" style="border-bottom: 1px solid #28232f">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; gap: 14px">
+<span class="num" aria-hidden="true">03</span>
+<div><h3 style="margin: 0 0 6px; font-size: 18px">Or install the plugin <span class="badge">Recommended</span></h3><p style="margin: 0; color: #a39cb0">Claude Code and Codex users can skip both steps. The plugin installs or reuses a verified runtime for you.</p></div>
+</div>
+<figure class="snippet" style="flex: 1.3 1 360px; min-width: 0">
+<figcaption>Terminal</figcaption>
+<pre><span class="ln"><span class="ok"># claude code</span></span><span class="ln">claude plugin install nhangen/obsidian</span><span class="ln">&nbsp;</span><span class="ln"><span class="ok"># then, inside a session</span></span><span class="ln">/obsidian:setup</span></pre>
+</figure>
+</article>
+</section>
+
+<section id="harnesses" aria-labelledby="h-title" style="margin-top: 56px">
+<h2 id="h-title" class="serif h2">Connect a harness</h2>
+<p class="blurb">Each guide registers <code>obsidian</code> for reads and <code>obsidian-write</code> for guarded writes.</p>
+<div class="grid">
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/integrations/claude/README.md"><span class="doc-title">Claude Code</span><span class="doc-desc">Stdio or HTTP launchers, write-server approval, and the plugin attachment.</span><span class="doc-file">integrations/claude/README.md</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/integrations/codex/README.md"><span class="doc-title">Codex</span><span class="doc-desc">config.toml entries, auto approval, and the opt-in native capture profile.</span><span class="doc-file">integrations/codex/README.md</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/integrations/opencode/README.md"><span class="doc-title">OpenCode</span><span class="doc-desc">Two local MCP entries and a scoped permission rule for writes.</span><span class="doc-file">integrations/opencode/README.md</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#build-and-configure"><span class="doc-title">Gemini CLI <span class="badge">Guide planned</span></span><span class="doc-desc">Add the stdio server under mcpServers in ~/.gemini/settings.json.</span><span class="doc-file">README.md#build-and-configure</span></a>
+</div>
+</section>
+
+<section id="contract" aria-labelledby="c-title" style="margin-top: 56px">
+<h2 id="c-title" class="serif h2">The Keeper contract</h2>
+<p class="blurb">What a write accepts, what it returns, and how to retry it safely.</p>
+<div class="grid">
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#write-contract"><span class="doc-title">Write contract</span><span class="doc-desc">Fields, outcomes, idempotency keys, timeouts, and recovery after a partial save.</span><span class="doc-file">README.md#write-contract</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/contract.json"><span class="doc-title">Machine contract</span><span class="doc-desc">Every tool, resource, and prompt with its scope, schemas, and status.</span><span class="doc-file">contract.json</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/test/fixtures/contract-fixtures.json"><span class="doc-title">Contract fixtures</span><span class="doc-desc">The cases the test suite checks the contract against.</span><span class="doc-file">test/fixtures/contract-fixtures.json</span></a>
+</div>
+</section>
+
+<section id="capture" aria-labelledby="cap-title" style="margin-top: 56px">
+<h2 id="cap-title" class="serif h2">Capture and hooks</h2>
+<p class="blurb">How sessions and commits reach the vault without a second writer.</p>
+<div class="grid">
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/packages/client/README.md"><span class="doc-title">Portable client</span><span class="doc-desc">The pinned bridge, lifecycle installer, and isolated Codex capture.</span><span class="doc-file">packages/client/README.md</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/packages/client/README.md#commit-route-policy"><span class="doc-title">Commit route policy</span><span class="doc-desc">A private map from repository to vault target for commit capture.</span><span class="doc-file">packages/client/README.md</span></a>
+<a class="doc" href="https://github.com/nhangen/claude-obsidian-plugin"><span class="doc-title">Plugin stop hooks</span><span class="doc-desc">Session autosave at Stop, writer handoff, and explicit retry.</span><span class="doc-file">claude-obsidian-plugin/README.md</span></a>
+</div>
+</section>
+
+<section id="deploy" aria-labelledby="d-title" style="margin-top: 56px">
+<h2 id="d-title" class="serif h2">Deploy over HTTP</h2>
+<p class="blurb">Serve one vault to remote clients with scoped tokens.</p>
+<div class="grid">
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#build-and-configure"><span class="doc-title">Streamable HTTP</span><span class="doc-desc">JWT scopes, host and origin allowlists, body and timeout limits.</span><span class="doc-file">README.md#build-and-configure</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#self-host-deployment-and-service-management"><span class="doc-title">Services and TLS</span><span class="doc-desc">systemd and launchd units, server.env, and a reverse proxy example.</span><span class="doc-file">README.md#self-host-deployment</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#monitoring"><span class="doc-title">Monitoring</span><span class="doc-desc">Per-request JSON events and the journal-based health monitor.</span><span class="doc-file">monitor.mjs</span></a>
+<a class="doc" href="https://github.com/nhangen/obsidian-mcp/blob/master/README.md#release-and-installation-contract"><span class="doc-title">Releases and rollback</span><span class="doc-desc">Verify checksums, switch the current symlink, and roll back atomically.</span><span class="doc-file">README.md#release-and-installation-contract</span></a>
+</div>
+</section>
+
+<aside aria-labelledby="own-title" style="margin-top: 64px; padding: 28px 32px; border: 1px solid #393243; border-radius: 12px; background: #15121c; display: flex; flex-wrap: wrap; align-items: center; gap: 20px 32px">
+<div style="flex: 1 1 380px; min-width: 0">
+<h2 id="own-title" class="serif h2">Every write has one owner.</h2>
+<p style="margin: 0; color: #a39cb0; max-width: 62ch">MCP failure never falls back to a vault mount or a local keeper. A failed write says so in its result and names the recovery step, so you always know what reached the vault.</p>
+</div>
+<img src="assets/642a62b4-3a8c-427c-9826-d05365a3defa.png" width="96" height="96" alt="" style="flex: none; display: block; object-fit: contain">
+</aside>
+</main>
+</div>
+
+<footer style="border-top: 1px solid #28232f">
+<div class="wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 28px; padding-bottom: 28px; font-size: 14px; color: #a39cb0">
+<p style="margin: 0">Built by <a href="https://linkedin.com/in/nathanhangen">Nathan Hangen</a> · v0.2.3 · MIT license</p>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px 20px">
+<a href="../" style="display: inline-flex; align-items: center; min-height: 44px">Home</a>
+<a href="https://github.com/nhangen/obsidian-mcp" style="display: inline-flex; align-items: center; min-height: 44px">GitHub</a>
+<a href="https://x.com/natehangen" style="display: inline-flex; align-items: center; min-height: 44px">X</a>
+<a href="https://linkedin.com/in/nathanhangen" style="display: inline-flex; align-items: center; min-height: 44px">LinkedIn</a>
+</nav>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:3900}}">
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+
+
+</body></html>
