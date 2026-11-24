@@ -14,7 +14,7 @@ for (const file of ["index.html", "docs/index.html"]) {
     const text = fs.readFileSync(file, "utf8");
     assert.match(text, /function trackClick\(/);
     assert.match(text, /gtag\('event', 'site_click'/);
-    assert.match(text, /gtag\('config', 'G-SWDQLSGE4Y'/);
+    assert.match(text, new RegExp(`gtag\\('config', '${NEW_ID}'`));
   });
 }
 
